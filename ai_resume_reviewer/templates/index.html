@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Resume Reviewer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📄 AI Resume Reviewer</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <label for="resume">Upload your resume (PDF or DOCX):</label><br>
+            <input type="file" name="resume" id="resume" required><br>
+            <input type="submit" value="Review Resume">
+        </form>
+        {% if feedback %}
+            <div class="feedback">
+                <h2>AI Feedback</h2>
+                <div class="feedback-box">{{ feedback }}</div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
